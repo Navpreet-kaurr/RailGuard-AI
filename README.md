@@ -1,107 +1,99 @@
 # 🚆 RailGuard AI
 
-## Railway Safety Anomaly Detection, Risk Intelligence & Predictive Analytics
+### Railway Safety Anomaly Detection, Risk Intelligence & Predictive Analytics
 
-RailGuard AI is a data analytics and machine learning project designed to analyze historical railway safety data from the **Government of India Open Government Data (OGD) Platform**.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-red?logo=streamlit)](https://navpreet-kaurr-railguard-ai-app-8h6u9e.streamlit.app/)
+[![GitHub](https://img.shields.io/badge/Source%20Code-GitHub-black?logo=github)](https://github.com/Navpreet-kaurr/RailGuard-AI)
+[![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit)](https://streamlit.io/)
 
-The system analyzes consequential train accidents, identifies unusual historical patterns, provides a historical risk classification, generates a simple baseline forecast, and analyzes railway station funding allocation and expenditure across railway zones.
-
-> **Note:** This project is designed for historical safety intelligence and exploratory analysis. It is not a real-time accident prediction or operational railway safety system.
-
----
-
-## 🎯 Project Objectives
-
-- Analyze historical consequential train accident trends.
-- Detect unusual changes in accident patterns.
-- Classify historical accident years into risk levels.
-- Generate a simple next-period accident baseline.
-- Analyze railway station development and maintenance funding.
-- Visualize insights through an interactive Streamlit dashboard.
-- Use official Government of India datasets rather than fabricated data.
+> **RailGuard AI** is a historical railway safety intelligence system that combines data analysis, machine learning, anomaly detection, risk classification, baseline forecasting, and railway infrastructure funding analysis into an interactive dashboard.
 
 ---
 
-## 📊 Government Data Sources
+## 🌐 Live Demo
 
-### 1. Consequential Train Accidents
+### 🚀 [Open RailGuard AI Dashboard](https://navpreet-kaurr-railguard-ai-app-8h6u9e.streamlit.app/)
 
-**Dataset:** Year-wise Number of Consequential Train Accidents, 2014-15 to 2024-25
+Explore the deployed dashboard to interact with:
 
-**Source:** Government of India Open Government Data (OGD) Platform, Ministry of Railways.
-
-**Dataset:**  
-https://www.data.gov.in/resource/year-wise-number-consequential-train-accidents-2014-15-2024-25
-
-The dataset contains year-wise consequential train accident counts from 2014-15 to 2024-25.
-
-> **Important:** The 2024-25 observation is reported only up to October 2024 and is therefore treated as a partial-year observation.
+- Railway accident trend analysis
+- Anomaly detection
+- Historical risk intelligence
+- Baseline forecasting
+- Railway station funding analysis
+- Interactive visualizations
 
 ---
 
-### 2. Railway Station Funding
+## 📌 Overview
 
-**Dataset:** Zonal-wise Details of Funds Allocated and Expenditure by Indian Railway for Development and Maintenance of Stations from 2020-21 to 2022-23
+RailGuard AI analyzes historical railway safety data published by the **Government of India Open Government Data (OGD) Platform**.
 
-**Source:** Government of India Open Government Data (OGD) Platform.
+The system focuses on identifying historical patterns and unusual changes in consequential train accidents while providing transparent analytical indicators for historical risk and a simple baseline estimate for the next period.
 
-**Dataset:**  
-https://www.data.gov.in/resource/zonal-wise-details-funds-allocated-and-expenditure-indian-railway-development-and
+It also analyzes railway-zone-wise station development and maintenance funding to provide additional infrastructure-related insights.
 
-The dataset contains railway-zone-wise allocation and expenditure information for railway station development and maintenance.
+### Key objectives
+
+- Analyze historical consequential train accident trends
+- Detect statistically unusual accident patterns
+- Classify completed years using a transparent historical risk indicator
+- Generate a simple next-period accident baseline
+- Analyze railway station funding allocation and expenditure
+- Build an interactive data analytics dashboard
+- Use official government datasets instead of fabricated data
 
 ---
 
-## 🧠 Machine Learning & Analytical Methods
+# 🧠 Analytical & Machine Learning Components
 
-### 1. Isolation Forest — Anomaly Detection
+## 1. 🔍 Isolation Forest — Anomaly Detection
 
-Isolation Forest is used to identify historically unusual accident patterns.
+RailGuard AI uses **Isolation Forest** to identify historically unusual accident patterns.
 
-The model uses:
+The model considers:
 
 - Consequential train accidents
 - Year-to-year accident change
 - Percentage change from the previous year
 
-The model identifies observations that differ substantially from the historical pattern.
+The analysis identifies statistically unusual observations around:
 
-The analysis identifies unusual changes around:
+| Financial Year | Observation |
+|---|---|
+| **2020-21** | Statistical anomaly |
+| **2021-22** | Statistical anomaly |
 
-- **2020-21**
-- **2021-22**
-
-These are statistical anomalies and should not be interpreted as causal explanations.
+These observations represent statistical deviations from the historical pattern and **should not be interpreted as causal explanations**.
 
 ---
 
-### 2. Historical Risk Classification
+## 2. ⚠️ Historical Risk Classification
 
-A transparent rule-based historical risk indicator is used instead of training a classification model on the extremely small annual dataset.
+Because the annual accident dataset is small, RailGuard AI uses a **transparent rule-based historical indicator** instead of training a classification model on a very limited dataset.
 
-Risk levels are calculated by comparing each completed year's accident count with the historical average.
+Each completed year is classified by comparing its accident count with the historical average.
 
 Risk categories:
 
-- **High**
-- **Medium**
-- **Low**
+- 🔴 **High**
+- 🟠 **Medium**
+- 🟢 **Low**
 
-This is a historical indicator and **not a probability of future accidents**.
+> **Important:** This is a historical analytical indicator and **not a probability of future railway accidents**.
 
 ---
 
-### 3. Baseline Forecasting
+## 3. 🔮 Baseline Forecasting
 
-The project uses a simple historical baseline to estimate the next-period accident count.
+RailGuard AI uses a simple historical baseline rather than a complex forecasting model because the available annual dataset is small.
 
-The forecast is calculated using the average of the three most recent completed financial years.
-
-The calculation is:
+The next-period estimate is calculated using the average of the **three most recent completed financial years**.
 
 ```text
 2021-22 → 35
 2022-23 → 48
 2023-24 → 40
-
-Baseline estimate → 41.0
+────────────────
+Baseline → 41.0
